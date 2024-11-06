@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/style.css/" th:href="@{css/style.css/}" />
+</head>
+<body>
+<div id="wrapper">
+    <main>
+        <div class="registration">
+            <div id="mainPart" class="registration">
+                <label class="header">Нарушениям нет!</label>
+                <label >
+                    <input class="regInput" placeholder="Логин" type="text" id="username" />
+                </label>
+                <label >
+                    <input class="regInput" placeholder="Пароль" type="password" id="password" />
+                </label>
+                <label >
+                    <input class="regInput" placeholder="Подтверждение пароля" type="password" id="confirmPassword" />
+                </label>
+                <button class="regButtons">Войти</button>
+            </div>
+            <div id="subPart">
+                <button class="regButtons" id="subBt">Регистрация</button>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
