@@ -15,7 +15,8 @@ body {
 }
 #mainPart {
     flex-direction: column;
-    background: #5E6E9A;
+    background-color: #5E6E9A;
+    transition: background-color 1s ease;
 
     height: 80vh;
     width: 30vw;
@@ -28,7 +29,10 @@ body {
 }
 
 #subPart {
-    background: #ADB5CB;
+    background-color: #ADB5CB;
+    transition: background-color 1s ease;
+
+
     width: 30vw;
     height: 20vh;
 
@@ -55,18 +59,21 @@ body {
     padding: 10px;
     width: 25vw;
     height: 5vh;
-    background: rgba(0, 0, 0, 0);
-    border: 2px solid #D4C7C7;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid;
+    border-color: #D4C7C7;
     border-radius: 10px;
 }
 .regInput:focus {
 }
 
 .header {
-    color: #989898;
+    color: #C2C2C2;
     font-family: "Roboto m", monospace;
     font-size: 200%;
     text-align: center;
+    padding-top: 20px;
+    transition: color 1s ease;
 }
 
 .regButtons {
@@ -83,10 +90,59 @@ body {
 
 .regButtons:hover {
     color: #EDEFF5;
-    background: #7E88C0;
+    background-color: #7E88C0;
 }
 
 .regButtons:active {
     color: #5B5A5A;
-    background: #94ABDD;
+    background-color: #94ABDD;
+}
+
+@keyframes fadeout {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes buttonsChange {
+    0% {opacity: 1}
+    50% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.subInput {
+    visibility: hidden;
+}
+
+.regFormActive.regButtons {
+    transition: opacity 3s ease-out;
+}
+
+.regFormActive.regInput::placeholder {
+    color: #616883; !important;
+
+}
+.regFormActive.regInput {
+    color: #5E6E9A; !important;
+    border-color: #5E6E9A; !important;
+}
+
+.regFormActive.subInput {
+    visibility: visible;
+    animation-name: fadeout;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+.regFormActive.header {
+    color: #5E6E9A;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
 }

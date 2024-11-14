@@ -4,6 +4,7 @@
     <title th:text="${title}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="/css/style.css/" th:href="@{css/style.css/}" />
+    <script src=/scripts/registrationFormChange.js></script>
 </head>
 <body>
 <div id="wrapper">
@@ -20,10 +21,16 @@
                 <label >
                     <input class="regInput" placeholder="Подтверждение пароля" type="password" id="confirmPassword" />
                 </label>
-                <button class="regButtons">Войти</button>
+                <label>
+                    <input class="regInput subInput" placeholder="Фио" type="text" id="fio"/>
+                </label>
+                <label>
+                    <input class="regInput subInput" placeholder="Почта" type="email" id="email"/>
+                </label>
+                <button class="regButtons" id="mainBt"><span>Войти</span></button>
             </div>
             <div id="subPart">
-                <button class="regButtons" id="subBt">Регистрация</button>
+                <button class="regButtons" id="subBt" onclick="registrationFormChange()"><span>Регистрация</span></button>
             </div>
         </div>
     </main>
