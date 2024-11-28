@@ -1,39 +1,57 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${title}"></title>
+    <title th:text="NoOfense"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="/css/style.css/" th:href="@{css/style.css/}" />
+    <link rel="stylesheet" href="/css/registration.css/" />
     <script src=/scripts/registrationFormChange.js></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const errorMessage = document.getElementById("error-message");
+            const errorText = document.getElementById("error-text").innerText;
+
+            if (errorText.trim().length > 0) {
+                errorMessage.classList.add("slide-in");
+
+                setTimeout(() => {
+                    errorMessage.classList.remove("slide-in");
+                }, 5000);
+            }
+        });
+    </script>
 </head>
 <body>
 <div id="wrapper">
-    <main>
+    <div id="error-message" class="slide-out">
+        <p id="error-text" th:text="${error}"></p>
+    </div>
+    <form action="/api/users/login" method="post">
         <div class="registration">
             <div id="mainPart" class="registration">
                 <label class="header">Нарушениям нет!</label>
-                <label >
-                    <input class="regInput" placeholder="Логин" type="text" id="username" />
-                </label>
-                <label >
-                    <input class="regInput" placeholder="Пароль" type="password" id="password" />
-                </label>
-                <label >
-                    <input class="regInput" placeholder="Подтверждение пароля" type="password" id="confirmPassword" />
+                <label>
+                    <input class="regInput" placeholder="Логин" type="text" name="username" />
                 </label>
                 <label>
-                    <input class="regInput subInput" placeholder="Фио" type="text" id="fio"/>
+                    <input class="regInput" placeholder="Пароль" type="password" name="password" />
                 </label>
                 <label>
-                    <input class="regInput subInput" placeholder="Почта" type="email" id="email"/>
+                    <input class="regInput" placeholder="Подтверждение пароля" type="password" name="confirmPassword" />
                 </label>
-                <button class="regButtons" id="mainBt"><span>Войти</span></button>
+                <label>
+                    <input class="regInput subInput" placeholder="Фио" type="text" name="fio"/>
+                </label>
+                <label>
+                    <input class="regInput subInput" placeholder="Почта" type="email" name="email"/>
+                </label>
+                <button class="regButtons" id="mainBt" name="mainBt" type="submit"><span>Войти</span></button>
             </div>
             <div id="subPart">
-                <button class="regButtons" id="subBt" onclick="registrationFormChange()"><span>Регистрация</span></button>
+                <button class="regButtons" id="subBt" onclick="registrationFormChange()" type="button"><span>Регистрация</span></button>
             </div>
         </div>
-    </main>
+    </form>
 </div>
+
 </body>
 </html>

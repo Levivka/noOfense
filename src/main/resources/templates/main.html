@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/main.css/" th:href="@{css/main.css/}" />
+</head>
+<body>
+<main class="container">
+    <div class="mainPart">
+        <header id="Header">Заявки</header>
+        <div class="Bids"></div>
+    </div>
+    <div class="sideBar">
+        <ul class="sideBarList">
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <svg class="icon sideButtonActive" width="94" height="103" viewBox="0 0 94 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M61.5205 76.5104H32.9788C24.4163 76.5104 18.708 72.2292 18.708 62.2396V42.2604C18.708 32.2708 24.4163 27.9896 32.9788 27.9896H61.5205C70.083 27.9896 75.7913 32.2708 75.7913 42.2604V62.2396C75.7913 72.2292 70.083 76.5104 61.5205 76.5104Z" stroke="#5E6E9A" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M61.5212 43.6875L52.5876 50.8229C49.6478 53.1633 44.8243 53.1633 41.8845 50.8229L32.9795 43.6875" stroke="#5E6E9A" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M90.3075 35.2552V67.745C90.3075 73.065 87.4575 78.0052 82.85 80.7127L54.635 97.0052C50.0275 99.6652 44.3275 99.6652 39.6725 97.0052L11.4575 80.7127C6.85 78.0527 4 73.1125 4 67.745V35.2552C4 29.9352 6.85 24.995 11.4575 22.2875L39.6725 5.995C44.28 3.335 49.98 3.335 54.635 5.995L82.85 22.2875C87.4575 24.995 90.3075 29.8877 90.3075 35.2552Z" stroke="#5E6E9A" stroke-width="7.125" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                    <svg class="icon" width="94" height="103" viewBox="0 0 94 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M90.3075 35.2552V67.745C90.3075 73.065 87.4575 78.0052 82.85 80.7127L54.635 97.0052C50.0275 99.6652 44.3275 99.6652 39.6725 97.0052L11.4575 80.7127C6.85 78.0527 4 73.1125 4 67.745V35.2552C4 29.9352 6.85 24.995 11.4575 22.2875L39.6725 5.995C44.28 3.335 49.98 3.335 54.635 5.995L82.85 22.2875C87.4575 24.995 90.3075 29.8877 90.3075 35.2552Z" stroke="#5E6E9A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M48.2497 74.5104H33.9788C25.4163 74.5104 19.708 70.2291 19.708 60.2396V40.2604C19.708 30.2708 25.4163 25.9896 33.9788 25.9896H62.5205C71.083 25.9896 76.7913 30.2708 76.7913 40.2604V48.8229" stroke="#5E6E9A" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M62.5212 41.6875L53.5876 48.8229C50.6478 51.1633 45.8243 51.1633 42.8845 48.8229L33.9795 41.6875" stroke="#5E6E9A" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M68.8291 58.1561L58.7254 68.2599C58.3259 68.6595 57.9548 69.4015 57.8691 69.9438L57.3268 73.797C57.1271 75.1955 58.0975 76.1659 59.496 75.9662L63.3492 75.4239C63.8915 75.3382 64.6621 74.9671 65.0331 74.5676L75.1369 64.4639C76.8779 62.7228 77.7057 60.6964 75.1369 58.1276C72.5967 55.5874 70.5702 56.4151 68.8291 58.1561Z" stroke="#5E6E9A" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M67.3721 59.6117C68.2283 62.6942 70.6258 65.0917 73.7083 65.9479" stroke="#5E6E9A" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                    <svg class="icon" width="104" height="115" viewBox="0 0 104 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M90.6814 40.7718V73.2749C90.6814 78.597 88.1004 83.5392 83.9277 86.2478L58.3753 102.547C54.2026 105.208 49.0404 105.208 44.8247 102.547L19.2723 86.2478C15.0996 83.5868 12.5186 78.6445 12.5186 73.2749V40.7718C12.5186 35.4496 15.0996 30.5074 19.2723 27.7988L44.8247 11.4997C48.9974 8.83857 54.1595 8.83857 58.3753 11.4997L83.9277 27.7988C88.1004 30.5074 90.6814 35.4021 90.6814 40.7718Z" stroke="#5E6E9A" stroke-width="8.40343" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M51.6237 52.2713C57.1593 52.2713 61.6468 47.3141 61.6468 41.1992C61.6468 35.0843 57.1593 30.1274 51.6237 30.1274C46.0881 30.1274 41.6006 35.0843 41.6006 41.1992C41.6006 47.3141 46.0881 52.2713 51.6237 52.2713Z" stroke="#5E6E9A" stroke-width="8.40343" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M68.8301 79.1671C68.8301 70.6136 61.1299 63.676 51.623 63.676C42.1162 63.676 34.416 70.6136 34.416 79.1671" stroke="#5E6E9A" stroke-width="8.40343" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                    <svg class="icon" width="94" height="103" viewBox="0 0 94 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M33.8457 38.105C34.7111 28.055 39.8757 23.9512 51.182 23.9512H51.5449C64.0236 23.9512 69.0207 28.9483 69.0207 41.4271V59.6287C69.0207 72.1075 64.0236 77.1046 51.5449 77.1046H51.182C39.9595 77.1046 34.7949 73.0567 33.8736 63.1742" stroke="#5E6E9A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.583 50.5H50.5397" stroke="#5E6E9A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M44.3145 41.1479L53.6665 50.5L44.3145 59.8521" stroke="#5E6E9A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M90.3075 35.2552V67.745C90.3075 73.065 87.4575 78.0052 82.85 80.7127L54.635 97.0052C50.0275 99.6652 44.3275 99.6652 39.6725 97.0052L11.4575 80.7127C6.85 78.0527 4 73.1125 4 67.745V35.2552C4 29.9352 6.85 24.995 11.4575 22.2875L39.6725 5.995C44.28 3.335 49.98 3.335 54.635 5.995L82.85 22.2875C87.4575 24.995 90.3075 29.8877 90.3075 35.2552Z" stroke="#5E6E9A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</main>
+</body>
+</html>

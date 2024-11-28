@@ -12,6 +12,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    align-self: end;
+}
+
+#content {
+    width: 80vw;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
 }
 #mainPart {
     flex-direction: column;
@@ -145,4 +155,38 @@ body {
 .fade-in {
     opacity: 1;
     transition: opacity 0.5s ease-out;
+}
+
+/* Родительский контейнер */
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#error-message {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 25vw;
+    background-color: #8795B5;
+    color: #DAE2E7;
+    font-family: "Roboto m", monospace;
+    font-size: 1.2em;
+    padding: 1%;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+#error-message.slide-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+#error-message p {
+    margin: 0;
+    text-align: center;
 }

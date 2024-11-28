@@ -1,6 +1,7 @@
 package com.example.noofense.Models;
 
-public class UserDto {
+public class User {
+    private String id;
     private String fio;
     private String email;
     private String login;
