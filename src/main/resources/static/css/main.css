@@ -1,10 +1,17 @@
 body {
     background-color: #5E6E9A;
     margin: 0;
-
 }
 ul{
     list-style-type:none
+}
+
+header {
+    color: #C2C2C2;
+    font-family: "Roboto m", monospace;
+    font-size: 150%;
+    text-align: start;
+    transition: color 1s ease;
 }
 .container {
     display: flex;
@@ -31,6 +38,8 @@ ul{
     /*align-items: flex-end;*/
     height: 10vh;
     width: 90vw;
+    padding-top: 0.5%;
+    padding-left: 0.5%;
 }
 .sideBarList {
 }
@@ -41,8 +50,38 @@ ul{
     margin-top: 10vh;
 }
 
+#profile {
+    width: 75%;
+    height: 70%;
+    margin-top: 10vh;
+}
+
 .sideButtonActive {
     path {
         stroke: #7084BB;
     }
+}
+
+.bids-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.bid-box {
+    border: 2px solid #DAE2E7;
+    padding: 1%;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bid-number, .bid-status, .bid-description {
+    margin-bottom: 8px;
+    color: #DAE2E7;
+}
+
+.bid-description {
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: clip;
 }

@@ -1,9 +1,11 @@
 package com.example.noofense.Controllers;
 
-import com.example.noofense.Models.UserDto;
-import com.example.noofense.Services.UserServices;
+import com.example.noofense.Models.User;
+import com.example.noofense.Services.Impl.UserServicesImpl;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,20 +13,20 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/api/users")
 public class UserController {
-    private final UserServices userServices;
+    private final UserServicesImpl userServicesImpl;
 
     @Autowired
-    public UserController(UserServices userServices) {
-        this.userServices = userServices;
+    public UserController(UserServicesImpl userServicesImpl) {
+        this.userServicesImpl = userServicesImpl;
     }
 
     @GetMapping("list")
     public ResponseEntity<String> getUserList() {
-        ResponseEntity<String> response = userServices.userList();
+        ResponseEntity<String> response = userServicesImpl.userList();
         return response;
     }
 
-    @PostMapping("/register")
+    @PostMapping()
     public String register(
             Model model,
             @ModelAttribute("username") String username,
@@ -37,8 +39,8 @@ public class UserController {
             return "registration";
         }
 
-        int statusCode = userServices.registration(username, password, confirmPas, email).getStatusCode().value();
-        return handleResponseStatus(statusCode, model); // Действие в зависимости от статуса
+        int statusCode = userServicesImpl.registration(username, password, confirmPas, email).getStatusCode().value();
+        return handleResponseStatus(statusCode, model);
     }
 
     private boolean validatePasswords(String password, String confirmPas, Model model) {
@@ -51,7 +53,7 @@ public class UserController {
 
     private String handleResponseStatus(int statusCode, Model model) {
         return switch (statusCode) {
-            case 201 -> "redirect:/";
+            case 201 -> "redirect:/registration";
             case 400 -> {
                 model.addAttribute("error", "Такой пользователь уже существует");
                 yield "registration";
@@ -81,8 +83,8 @@ public class UserController {
         if (!validatePasswords(password, confirmPas, model)) {
             return "registration";
         }
-        if (userServices.login(username, password).getStatusCode().value() == 200) {
-            return "redirect:/main";
+        if (userServicesImpl.login(username, password).getStatusCode().value() == 200) {
+            return "redirect:/main/bids";
         }
         else {
             model.addAttribute("error", "Некорректный пароль или логин");

@@ -2,8 +2,8 @@
 
 body {
     background-image: url("/images/bg4096_2304.png");
-    background-size: auto;
-    background-position: center;
+    background-size: cover;
+    background-position: left;
     background-repeat: no-repeat;
     margin: 0;
 }
@@ -157,7 +157,7 @@ body {
     transition: opacity 0.5s ease-out;
 }
 
-/* Родительский контейнер */
+
 #wrapper {
     display: flex;
     flex-direction: row;

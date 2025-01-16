@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/css/main.css/" th:href="@{css/main.css/}" />
+    <title>Заявки</title>
+    <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" />
 </head>
 <body>
 <main class="container">
     <div class="mainPart">
         <header id="Header">Заявки</header>
-        <div class="Bids">
-        <table class="BidsTable">
-            <tr th:each = "user: ${bids}">
-                <td th:text="${bids.carNumber}">vasile</td>
-                <td th:text="${bids.status}">45</td>
-            </tr>
-        </table>
+        <div class="bids-container">
+            <div class="bid-box" th:each="bid : ${bids}">
+                <div class="bid-number">
+                    <span th:text="${bid.carNumber}"></span>
+                    <span> | </span>
+                    <span th:text="${bid.status}"></span>
+                </div>
+                <div class="bid-status">
+                </div>
+                <div class="bid-description">
+                    <span th:text="${bid.description}"></span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="sideBar">

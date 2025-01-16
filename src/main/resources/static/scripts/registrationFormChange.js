@@ -50,5 +50,5 @@ function registrationFormChange() {
     state ? document.getElementsByClassName("header").item(0).classList.add("regFormActive")
         : document.getElementsByClassName("header").item(0).classList.remove("regFormActive");
 
-    document.querySelector("form").action = state ? "/api/users/register" : "/api/users/login";
+    document.querySelector("form").action = state ? "/api/users" : "/auth";
 }

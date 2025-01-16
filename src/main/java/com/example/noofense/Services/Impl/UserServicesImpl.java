@@ -1,24 +1,19 @@
-package com.example.noofense.Services;
+package com.example.noofense.Services.Impl;
 
-import com.example.noofense.Models.User;
-import com.example.noofense.Models.UserDto;
-import org.springframework.http.HttpEntity;
+import com.example.noofense.Models.Dto.UserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.ErrorResponseException;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.http.HttpClient;
-
 @Service
-public class UserServices {
+public class UserServicesImpl {
     private final RestTemplate restTemplate;
     private final String baseUrl = "http://localhost:8083/users";
 
-    public UserServices(RestTemplate restTemplate) {
+    public UserServicesImpl(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 

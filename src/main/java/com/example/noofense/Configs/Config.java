@@ -1,4 +1,4 @@
-package com.example.noofense.Services;
+package com.example.noofense.Configs;
 
 
 import org.springframework.context.annotation.Bean;

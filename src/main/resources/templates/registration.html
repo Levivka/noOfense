@@ -10,6 +10,26 @@
             const errorMessage = document.getElementById("error-message");
             const errorText = document.getElementById("error-text").innerText;
 
+            const form = document.querySelector("form");
+            const password = document.getElementById("password");
+            const confirmPassword = document.getElementById("confirmPassword");
+
+            form.addEventListener("submit", function (event) {
+                console.log("Form submitted");
+
+                if (password.value !== confirmPassword.value) {
+                    event.preventDefault(); // Останавливаем отправку формы
+                    console.log("Пароли не совпадают!");
+
+                    errorMessage.innerText = "Пароли не совпадают!";
+                    errorMessage.classList.add("slide-in");
+
+                    setTimeout(() => {
+                        errorMessage.classList.remove("slide-in");
+                    }, 5000);
+                }
+            });
+
             if (errorText.trim().length > 0) {
                 errorMessage.classList.add("slide-in");
 
@@ -23,9 +43,9 @@
 <body>
 <div id="wrapper">
     <div id="error-message" class="slide-out">
-        <p id="error-text" th:text="${error}"></p>
+        <p id="error-text" th:text="${param.error}"></p>
     </div>
-    <form action="/api/users/login" method="post">
+    <form action="#" th:action="@{auth}" method="post">
         <div class="registration">
             <div id="mainPart" class="registration">
                 <label class="header">Нарушениям нет!</label>
@@ -33,10 +53,10 @@
                     <input class="regInput" placeholder="Логин" type="text" name="username" />
                 </label>
                 <label>
-                    <input class="regInput" placeholder="Пароль" type="password" name="password" />
+                    <input class="regInput" placeholder="Пароль" type="password" name="password" id="password" />
                 </label>
                 <label>
-                    <input class="regInput" placeholder="Подтверждение пароля" type="password" name="confirmPassword" />
+                    <input class="regInput" placeholder="Подтверждение пароля" type="password" name="confirmPassword" id="confirmPassword" />
                 </label>
                 <label>
                     <input class="regInput subInput" placeholder="Фио" type="text" name="fio"/>

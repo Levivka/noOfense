@@ -1,4 +1,4 @@
-package com.example.noofense.Models;
+package com.example.noofense.Models.Dto;
 
 public class UserDto {
     private String fio;
